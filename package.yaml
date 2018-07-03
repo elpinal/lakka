@@ -21,6 +21,8 @@ description:         Please see the README on Github at <https://github.com/elpi
 dependencies:
 - base >= 4.7 && < 5
 - containers >= 0.5.10.2
+- elt0 == 0.1.0.0
+- transformers >= 0.5.2.0
 
 library:
   source-dirs: src

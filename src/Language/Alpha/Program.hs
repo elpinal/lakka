@@ -1,10 +1,12 @@
 module Language.Alpha.Program
-  (
+  ( Type(..)
+  , Value(..)
   ) where
 
 import Data.List
 import qualified Data.Map.Lazy as Map
 import Data.Monoid
+import Data.Word
 
 data Program = Program
   { heap :: Map.Map String HeapValue
@@ -33,7 +35,7 @@ data Term
 
 data Value
   = Var String
-  | IntLit Int
+  | IntLit Word32
   deriving (Eq, Show)
 
 data Decl = Assign String RightHand
@@ -90,7 +92,7 @@ instance Display Term where
 
 instance Display Value where
   displays (Var s) = showString s
-  displays (IntLit i) = shows i
+  displays (IntLit w) = shows w
 
 instance Display Decl where
   displays (Assign s r) = spaces [showString s, showChar '=', displays r]
