@@ -1,6 +1,11 @@
 module Language.Alpha.Program
   ( Type(..)
+  , Program(..)
+  , HeapValue(..)
+  , Term(..)
+  , Decl(..)
   , Value(..)
+  , RightHand(..)
   ) where
 
 import Data.List
