@@ -24,5 +24,5 @@ translateType (Function ts) =
 type Alloc = Map.Map String E.Reg
 
 translateValue :: Value -> State Alloc E.Operand
-translateValue (IntLit w) = return $ E.wordO $ w
+translateValue (IntLit w) = return $ E.wordO w
 translateValue (Var s)    = E.Register <$> gets (Map.findWithDefault (error "unexpected error: translateValue: missing register") s)
